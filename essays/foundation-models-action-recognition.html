@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Advancing Human Action Recognition with Foundation Models Trained on Unlabeled Public Videos | Yang Qian | Professional Portfolio">
+    <meta name="description" content="">
+    <meta name="image" content="https://github.com/YangQiantwx.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Yang Qian | Professional Portfolio">
+    <meta property="og:url" content="https://YangQiantwx.github.io/essays/foundation-models-action-recognition.html">
+    <meta property="og:title" content="Advancing Human Action Recognition with Foundation Models Trained on Unlabeled Public Videos | Yang Qian | Professional Portfolio">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://github.com/YangQiantwx.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/techfolio-theme/default.css">
+    <link rel="stylesheet" type="text/css" href="/css/rouge/github.css">
+    <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
+    
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+
+    <title>Advancing Human Action Recognition with Foundation Models Trained on Unlabeled Public Videos | Yang Qian | Professional Portfolio</title>
+  </head>
+  <body>
+  <header class="navbar navbar-expand navbar-light bg-light bg-gradient border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Yang Qian</a>
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <a class="nav-link" href="/#projects">Projects</a>
+        <a class="nav-link" href="/#essays">Essays</a>
+        <a class="nav-link" href="/resume.html">Resume</a>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container py-4">
+  <h1 class="display-4">Advancing Human Action Recognition with Foundation Models Trained on Unlabeled Public Videos</h1>
+  <span class="date">19 Feb 2024</span>
+  <hr>
+  <p><img src="/img/foundation-models/clipsamples.jpeg" alt="Example TikTok video clips used for pretraining" class="img-fluid rounded shadow my-3" style="max-width: 700px;" /></p>
+
+<h3 id="abstract">Abstract</h3>
+
+<p>The increasing variety and quantity of tagged multimedia content on online platforms offers a unique opportunity to advance the field of human action recognition. In this study, we utilize <strong>283,582 unique, unlabeled TikTok video clips</strong>, categorized into <strong>386 hashtags</strong>, to train a domain-specific foundation model for action recognition.</p>
+
+<p>We employ <strong>VideoMAE V2</strong>, an advanced model integrating Masked Autoencoders (MAE) with Vision Transformers (ViT), pre-trained on this diverse collection of unstructured videos. Our model, fine-tuned on established action recognition benchmarks such as <strong>UCF101</strong> and <strong>HMDB51</strong>, achieves state-of-the-art results:</p>
+
+<ul>
+  <li><strong>UCF101</strong>: 99.05%</li>
+  <li><strong>HMDB51</strong>: 86.08%</li>
+  <li><strong>Kinetics-400</strong>: 85.51%</li>
+  <li><strong>Something-Something V2</strong>: 74.27%<br />
+(using the ViT-giant backbone)</li>
+</ul>
+
+<p>These results highlight the potential of using unstructured and unlabeled videos as a valuable source of diverse and dynamic content for training foundation models.</p>
+
+<hr />
+
+<h3 id="key-findings">Key Findings</h3>
+
+<ul>
+  <li>📉 Performance gains from additional pre-training data diminish as dataset size scales</li>
+  <li>🎯 Data <em>quality</em> is more critical than sheer quantity in self-supervised learning</li>
+  <li>🧠 Domain-specific pretraining leads to highly effective transfer learning for video understanding</li>
+</ul>
+
+<hr />
+
+<h3 id="relevance-to-phd-research">Relevance to PhD Research</h3>
+
+<p>This work contributes directly to my PhD focus on:</p>
+<ul>
+  <li>Foundation models for healthcare and behavioral diagnostics</li>
+  <li>Self-supervised video representation learning</li>
+  <li>Scalability and efficiency of domain-specific pretraining</li>
+</ul>
+
+<hr />
+
+<h3 id="contribution">Contribution</h3>
+
+<ul>
+  <li>Led the design, pretraining, and fine-tuning of foundation models</li>
+  <li>Conducted benchmark evaluations across four major datasets</li>
+  <li>Analyzed learning dynamics across dataset sizes</li>
+  <li>Sole author of all written content and figures</li>
+</ul>
+
+<hr />
+
+<h3 id="preprint-access">Preprint Access</h3>
+
+<p>📄 <a href="https://arxiv.org/abs/2402.08875" target="_blank">arXiv:2402.08875</a></p>
+
+<p>This work is currently under review and available as a public technical report.</p>
+
+</div>
+
+<footer class="navbar navbar-expand navbar-light bg-light bg-gradient border-top">
+  <div class="container-fluid">
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <small><a class="nav-link" href="https://techfolios.github.io">Made with Techfolios</a></small>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

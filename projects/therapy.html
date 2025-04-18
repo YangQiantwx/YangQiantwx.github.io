@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="A Linear Programming and Deep Reinforcement Learning Framework for HDR Prostate Brachytherapy | Yang Qian | Professional Portfolio">
+    <meta name="description" content="">
+    <meta name="image" content="https://github.com/YangQiantwx.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Yang Qian | Professional Portfolio">
+    <meta property="og:url" content="https://YangQiantwx.github.io/projects/therapy.html">
+    <meta property="og:title" content="A Linear Programming and Deep Reinforcement Learning Framework for HDR Prostate Brachytherapy | Yang Qian | Professional Portfolio">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://github.com/YangQiantwx.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/techfolio-theme/default.css">
+    <link rel="stylesheet" type="text/css" href="/css/rouge/github.css">
+    <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
+    
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+
+    <title>A Linear Programming and Deep Reinforcement Learning Framework for HDR Prostate Brachytherapy | Yang Qian | Professional Portfolio</title>
+  </head>
+  <body>
+  <header class="navbar navbar-expand navbar-light bg-light bg-gradient border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Yang Qian</a>
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <a class="nav-link" href="/#projects">Projects</a>
+        <a class="nav-link" href="/#essays">Essays</a>
+        <a class="nav-link" href="/resume.html">Resume</a>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container py-4">
+  <h1 class="display-4">A Linear Programming and Deep Reinforcement Learning Framework for HDR Prostate Brachytherapy</h1>
+ <h3 id="-project-overview">🧬 Project Overview</h3>
+
+<p>Prostate cancer remains the second most common cancer in the United States, with an estimated 288,300 new cases and 34,700 deaths in 2023. Among the leading treatment options, high-dose-rate (HDR) brachytherapy (BT) is widely used for intermediate- and high-risk patients. This procedure involves inserting temporary radiation sources into the prostate to deliver concentrated doses directly to cancerous tissue. Despite its clinical efficacy, HDR BT presents a major challenge: optimizing the radiation dose while minimizing exposure to nearby organs-at-risk (OARs) such as the bladder, rectum, and urethra. Excessive radiation to these regions can lead to severe side effects including edema, incontinence, and impotence.</p>
+
+<p>To address these limitations, we previously introduced a novel catheter placement strategy called <strong>Curvilinear Catheter Implantation (CuLCI)</strong>. Unlike conventional straight needles, CuLCI uses flexible catheters that conform to the patient’s anatomy, enabling improved dosimetric coverage of dominant intraprostatic lesions (DILs) while better sparing critical structures. In this project, we further extend CuLCI by proposing a <strong>two-stage optimization framework combining linear programming (LP) and deep reinforcement learning (RL)</strong> to automatically generate and refine treatment plans. Using MRI data from an anonymized patient, we constructed a 3D model of the prostate and OARs. The LP model first selects 46 optimal dwell positions and computes the initial dwell times. Then, a deep RL model fine-tunes the plan by adjusting dwell times with continuous actions based on a carefully designed reward function. The reward is maximized when coverage metrics (V100 ≥ 0.90, V150 ≤ 0.35) are satisfied and OAR doses (D10 for bladder, rectum, and urethra) are minimized.</p>
+
+<p>The initial LP-generated plan yielded promising results (V100 = 0.96, V150 = 0.172, D10 values of 0.673, 0.649, and 1.1094 for bladder, rectum, and urethra respectively). After refinement, the deep RL model produced slightly improved dosimetry (V100 = 0.904, V150 = 0.17, and D10 values reduced to 0.65, 0.634, and 1.079), while eliminating six unnecessary dwell positions. These results confirm the ability of our LP+RL pipeline to generate more efficient, personalized plans for HDR BT using CuLCI. Future work will focus on evaluating this method across a larger patient population, exploring more expressive reward functions, and extending to additional cancer types.</p>
+
+<hr />
+
+<h3 id="-key-results">🔍 Key Results</h3>
+
+<ul>
+  <li>LP model achieved <strong>V100 = 96%</strong>, <strong>V150 = 17.2%</strong>, and D10 values for bladder/rectum/urethra within prescribed limits.</li>
+  <li>Deep RL further improved the dose distribution, reducing D10 values while maintaining adequate prostate coverage.</li>
+  <li>Final plan used only 40 of the original 46 source points, improving efficiency.</li>
+</ul>
+
+<hr />
+
+<h3 id="-research-significance">🧠 Research Significance</h3>
+
+<p>This project demonstrates the feasibility and efficacy of combining <strong>optimization theory</strong> and <strong>machine learning</strong> to automate treatment planning for HDR prostate brachytherapy. It also highlights the potential of <strong>curvilinear catheters</strong>—flexible, steerable implants—to improve dosimetry by accessing complex anatomical regions while using fewer needles.</p>
+
+<hr />
+
+<h3 id="-venue--recognition">📍 Venue &amp; Recognition</h3>
+
+<p>Presented at the <strong>ASME IMECE 2024</strong> conference in Memphis, TN in the track <em>Computational Modeling in Biomedical Applications</em>. The paper was peer-reviewed and included in the official conference proceedings.</p>
+
+<ul>
+  <li>📄 <strong>Paper Title:</strong> A Linear Programming and Deep Reinforcement Learning Framework to Choose Dwell Positions and Dwell Time in High-Dose-Rate Prostate Brachytherapy Using Curvilinear Catheters</li>
+  <li>🧑‍🏫 <strong>Presenting Author:</strong> Yang Qian</li>
+  <li>📚 <strong>Session:</strong> 06-08-03</li>
+  <li>🌐 <a href="https://asmedigitalcollection.asme.org/IMECE/proceedings-abstract/IMECE2024/88629/1211742">ASME PAPER LINK</a></li>
+</ul>
+
+<hr />
+
+<h3 id="-my-contribution">👨‍💻 My Contribution</h3>
+
+<ul>
+  <li>Built spatial models of the prostate and organs-at-risk from CT scans and contoured STL files.</li>
+  <li>Developed and solved LP model using PuLP and GUROBI to determine initial dwell plan.</li>
+  <li>Designed and trained a custom DDPG-based deep RL agent to fine-tune dwell times.</li>
+  <li>Created a custom OpenAI Gym environment and dosimetric reward function for RL.</li>
+  <li>Evaluated model using V100/V150 and D10 metrics across all organs.</li>
+</ul>
+
+<hr />
+
+<p>📷 Below: 3D anatomy model with prostate, OARs, curvilinear catheters, and sampled dwell points.</p>
+
+<p><img src="../img/therapy/demo.png" class="img-fluid rounded shadow my-3" alt="Curvilinear catheter planning model" style="max-width: 700px;" /></p>
+
+
+</div>
+
+<footer class="navbar navbar-expand navbar-light bg-light bg-gradient border-top">
+  <div class="container-fluid">
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <small><a class="nav-link" href="https://techfolios.github.io">Made with Techfolios</a></small>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

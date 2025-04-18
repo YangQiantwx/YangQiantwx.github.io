@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="ASD Video Screening Using Foundation Models | Yang Qian | Professional Portfolio">
+    <meta name="description" content="">
+    <meta name="image" content="https://github.com/YangQiantwx.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Yang Qian | Professional Portfolio">
+    <meta property="og:url" content="https://YangQiantwx.github.io/projects/asd.html">
+    <meta property="og:title" content="ASD Video Screening Using Foundation Models | Yang Qian | Professional Portfolio">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://github.com/YangQiantwx.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/techfolio-theme/default.css">
+    <link rel="stylesheet" type="text/css" href="/css/rouge/github.css">
+    <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
+    
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+
+    <title>ASD Video Screening Using Foundation Models | Yang Qian | Professional Portfolio</title>
+  </head>
+  <body>
+  <header class="navbar navbar-expand navbar-light bg-light bg-gradient border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Yang Qian</a>
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <a class="nav-link" href="/#projects">Projects</a>
+        <a class="nav-link" href="/#essays">Essays</a>
+        <a class="nav-link" href="/resume.html">Resume</a>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container py-4">
+  <h1 class="display-4">ASD Video Screening Using Foundation Models</h1>
+ <p><img class="img-fluid rounded shadow my-3" src="../img/asd/asd.png" alt="ASD classification visual overview" style="max-width: 700px;" /></p>
+
+<p>Autism Spectrum Disorder (ASD) affects approximately <strong>1 in 36 children</strong> in the United States, underscoring the urgent need for accessible early screening solutions. Current clinical assessments are time-intensive, requiring detailed observations and professional oversight. Existing AI models often depend on lab-collected data or intensive annotations like eye tracking or pose estimation — limiting scalability.</p>
+
+<hr />
+
+<h3 id="-research-overview">💡 Research Overview</h3>
+
+<p>The development of this ASD screening system began with a careful preprocessing pipeline to clean and curate a dataset of short video clips featuring children in natural environments. Unlike traditional diagnostic datasets collected in clinical settings, the raw videos in our collection came from real-world gameplay recordings where the presence of human subjects and interaction quality varied significantly. The first step involved removing non-human frames and low-quality footage using automated filters. We applied a human detection heuristic to eliminate videos without visible human presence, then used <strong>PySceneDetect</strong> to segment videos into semantically distinct scenes. This allowed us to better isolate consistent behaviors within shorter clips.</p>
+
+<p>Following automated pruning, a <strong>manual review</strong> phase was conducted. Human annotators labeled clips as “usable” or “unusable” based on whether they displayed relevant social or interactive behavior. This stage was crucial to ensure the final dataset was behaviorally informative while still retaining the natural, unstructured qualities of real-life video. The goal was not to enforce rigid annotation schemas, but to create a dataset that reflected observable behavior patterns without requiring clinical tools like gaze tracking, pose estimation, or structured questionnaires.</p>
+
+<p>Once the dataset was curated, we fed the processed clips into our training pipeline. Each clip was assigned a label based on the child’s diagnosis (ASD or NT), and grouped accordingly for <strong>gender-balanced training and testing splits</strong>. By limiting each child to a maximum of three clips, we ensured no single participant dominated the training distribution. This process made the final model more robust and generalizable — capable of identifying behavioral differences using only <strong>unstructured, short video data</strong>. Our system was trained using a vision transformer foundation model and evaluated on multiple metrics across 20 stratified Monte Carlo cross-validation splits, with consistent child-level coverage enforced across all runs.</p>
+
+<hr />
+
+<h3 id="-technical-highlights">🧪 Technical Highlights</h3>
+
+<ul>
+  <li>Pretraining: TikTok-like dataset of 280k+ unlabeled videos</li>
+  <li>Fine-tuning: Real-world clips labeled by child diagnosis</li>
+  <li>Model: Vision Transformer (ViT, via VideoMAEv2)</li>
+  <li>Input: Short video segments (∼10s)</li>
+  <li>Output: Binary classification (ASD vs. NT)</li>
+</ul>
+
+<hr />
+
+<h3 id="-data-splitting-and-child-mapping">📊 Data Splitting and Child Mapping</h3>
+
+<p>We implemented a custom <strong>Monte Carlo split generation</strong> pipeline with forced gender-balanced test sets per split:</p>
+
+<ul>
+  <li><strong>20 total splits</strong></li>
+  <li><strong>Each test set</strong> contains 2 ASD + 2 NT children (1:1 male/female ratio)</li>
+  <li><strong>Forced candidate selection</strong> used to ensure all children appear in test sets at least once</li>
+  <li><strong>Clip cap</strong>: Max 3 per child to avoid imbalance</li>
+  <li><strong>No child appears in both train/test in any split</strong></li>
+</ul>
+
+<hr />
+
+<h3 id="-evaluation">📈 Evaluation</h3>
+
+<p>Each model was evaluated using:</p>
+
+<ul>
+  <li>Clip-level and child-level accuracy</li>
+  <li>Macro / weighted F1 scores</li>
+  <li>Confusion matrices</li>
+  <li>Test set consistency via <strong>Jaccard similarity</strong> matrix across splits</li>
+</ul>
+
+<hr />
+
+<h3 id="-results-summary">✅ Results Summary</h3>
+
+<ul>
+  <li>Achieved &gt;90% accuracy in some runs using only 10s clips from unconstrained videos</li>
+  <li>Overlap analysis using the Jaccard similarity (computed from unique child sets in test CSVs) confirmed test set diversity and split independence</li>
+</ul>
+
+<p>🎯 <strong>All Splits Summary:</strong></p>
+<ul>
+  <li>Mean Clip Accuracy: 0.702</li>
+  <li>Mean F1 Macro: 0.691</li>
+  <li>Mean F1 Weighted: 0.693</li>
+  <li>Mean Child-Level Accuracy: 0.725</li>
+</ul>
+
+<hr />
+
+<h3 id="-alignment-with-phd-goals">🧭 Alignment with PhD Goals</h3>
+
+<p>This project directly reflects my research focus:</p>
+<ul>
+  <li>Applying <strong>foundation models</strong> to behavioral diagnostics</li>
+  <li>Building <strong>scalable, annotation-free</strong> video-based health AI</li>
+  <li>Designing <strong>data pipelines</strong> that prioritize fairness, coverage, and reproducibility</li>
+</ul>
+
+</div>
+
+<footer class="navbar navbar-expand navbar-light bg-light bg-gradient border-top">
+  <div class="container-fluid">
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <small><a class="nav-link" href="https://techfolios.github.io">Made with Techfolios</a></small>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
