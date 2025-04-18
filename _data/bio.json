@@ -1,16 +1,21 @@
 {
   "basics": {
     "name": "Yang Qian",
-    "label": "Student",
+    "label": "Ph.D. Candidate in Computer Science",
     "picture": "https://github.com/YangQiantwx.png",
     "email": "qianyang@hawaii.edu",
-    "phone": "810-841-0943",
+    "phone": "",
     "website": "https://YangQiantwx.github.io",
-    "summary": "I am studying for a Ph.D. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Spring, 2026.",
-    "location": { "address": "", "postalCode": "96822", "city": "Honolulu", "countryCode": "USA", "region": "Hawaii" },
+    "summary": "Ph.D. candidate in Computer Science at the University of Hawai‘i at Mānoa, focusing on computer vision and foundation models for healthcare applications. Expected graduation: Spring 2026.",
+    "location": {
+      "city": "Honolulu",
+      "region": "Hawaii",
+      "countryCode": "USA",
+      "postalCode": ""
+    },
     "profiles": [
-      { "network": "github", "username": "YangQiantwx", "url": "http://github.com/YangQiantwx" },
-      { "network": "linkedin", "username": "yang-qian-67a87722a", "url": "http://linkedin.com/in/yang-qian-67a87722a" }
+      { "network": "GitHub", "username": "YangQiantwx", "url": "https://github.com/YangQiantwx" },
+      { "network": "LinkedIn", "username": "yang-qian-67a87722a", "url": "https://linkedin.com/in/yang-qian-67a87722a" }
     ]
   },
   "interests": [
@@ -21,88 +26,109 @@
   "skills": [
     {
       "name": "Languages and Frameworks",
-      "keywords": [ "C++", "Java", "Javascript", "Python" ]
+      "keywords": ["C++", "Python", "Java", "JavaScript", "Swift"]
     },
     {
       "name": "Toolsets/OS",
-      "keywords": [ "MacOS", "Ubuntu", "Git/GitHub", "Linux" ]
+      "keywords": ["Linux", "Ubuntu", "MacOS", "Git/GitHub"]
     }
   ],
   "education": [
     {
-      "institution": "University of Hawaiʻi at Mānoa, Honolulu, HI",
-      "area": "Computer Science (expected Spring, 2026)",
+      "institution": "University of Hawai‘i at Mānoa",
+      "area": "Computer Science",
       "studyType": "Ph.D.",
-      "startDate": "2023-09-01",
-      "endDate": "Present",
-      "courses": [
-      ]
+      "startDate": "2023-08-01",
+      "endDate": "2026-05-31",
+      "gpa": "",
+      "summary": "Doctoral student in Computer Science with a focus on machine learning and vision for healthcare."
+    },
+    {
+      "institution": "University of Hawai‘i at Mānoa",
+      "area": "Computer Science",
+      "studyType": "M.S.",
+      "startDate": "2021-08-01",
+      "endDate": "2023-05-31",
+      "gpa": "3.77",
+      "summary": "Master of Science in Computer Science. Research focus on emotion recognition and foundation models."
+    },
+    {
+      "institution": "Concordia College",
+      "area": "Computer Science, Mathematics",
+      "studyType": "B.A.",
+      "startDate": "2017-09-01",
+      "endDate": "2021-05-31",
+      "gpa": "3.696",
+      "summary": "Bachelor of Arts with double major coursework in Mathematics (2017–2018) and Computer Science (2018–2021)."
     }
   ],
   "work": [
     {
-      "company": "UH Manoa ICS",
+      "company": "University of Hawai‘i at Mānoa - CIRP Lab",
       "position": "Research Assistant",
-      "website": "",
-      "startDate": "2023-08-01",
+      "startDate": "2024-08-01",
       "endDate": "Present",
-      "summary": "Research on AI for healthcare",
+      "summary": "Research on fine-tuning action recognition models, developing diagnostic tools for ASD, and contributing to CVPR 2025 workshop infrastructure.",
       "highlights": [
-        "Applied machine learning research studying the development diagnostic models for prediction of pediatric developmental delays",
-        "Build foundation model based on Tiktok videos"
+        "Built and maintained the evaluation pipeline for the CVPR 2025 Bin Picking Challenge",
+        "Investigated vision transformer models for ASD behavioral screening"
       ]
     },
     {
-      "company": "UH Manoa ICS",
+      "company": "University of Hawai‘i at Mānoa - Digital Health Lab",
+      "position": "Research Assistant",
+      "startDate": "2023-08-01",
+      "endDate": "2024-07-31",
+      "summary": "Applied machine learning research to diagnostic models for pediatric developmental delays using real-world video data."
+    },
+    {
+      "company": "University of Hawai‘i at Mānoa - AMMI Lab",
+      "position": "Research Assistant",
+      "startDate": "2022-08-01",
+      "endDate": "2023-05-31",
+      "summary": "Worked on robotics and medical instrumentation with image/data processing tasks."
+    },
+    {
+      "company": "University of Hawai‘i at Mānoa",
       "position": "Teaching Assistant",
-      "website": "",
       "startDate": "2021-08-01",
-      "endDate": "2022-08-1",
-      "summary": "",
-      "highlights": [
-        "Assisted with curriculum development, instruction, grading, and distance education support for the ICS program and other teaching related duties as needed",
-      ]
+      "endDate": "2022-08-01",
+      "summary": "Supported courses in programming and computational thinking, including grading and instructional duties."
     }
   ],
-  "volunteer": [
+  "projects": [
     {
-      "organization": "Center for Renewable Energy and Island Sustainability",
-      "website": "http://manoa.hawaii.edu/reis",
-      "position": "Software Developer",
-      "startDate": "2016-01-01",
-      "endDate": "Present",
-      "summary": "Lead developer for weather sensing project",
-      "highlights": [
-        "Design firmware for distributed weather sensor network",
-        "Maintain custom data collection and storage infrastructure"
-      ]
+      "name": "CVPR 2025 Bin Picking Challenge",
+      "description": "Built the baseline and helped organize the CVPR 2025 PIRA workshop challenge with Intrinsic and OpenCV.",
+      "url": "https://github.com/CIRP-Lab/bpc_baseline"
     },
     {
-      "organization": "",
-      "website": "",
-      "position": "Professional organization involvement",
-      "startDate": "",
-      "endDate": "",
-      "summary": "",
-      "highlights": [
-        "Chair, ACM Manoa, 2016-Present",
-        "Member, IEEE Student Branch, 2014-Present",
-        "Webmaster/IT Officer, IEEE Student Branch, UH Manoa, 2012-2013"
-      ]
+      "name": "ASD Diagnosis with VideoMAE",
+      "description": "Developed a diagnostic pipeline using a ViT-based foundation model to classify ASD using short unstructured videos from the GuessWhat dataset."
+    },
+    {
+      "name": "TikTok Action Recognition Foundation Model",
+      "description": "Led pretraining and benchmark experiments on a 283k+ clip dataset to train a domain-specific foundation model for action recognition."
     }
   ],
   "awards": [
     {
-      "title": "B+ Scholarship",
-      "date": "2013-Present",
-      "awarder": "State of Hawaii",
-      "summary": "Scholarships awarded to incoming freshmen and continuing students who complete a rigorous high school curriculum with a minimum overall GPA of 3.0 at a Hawai'i public school."
+      "title": "Hawai‘i Data Science Institute Fellowship",
+      "date": "2023-2024",
+      "awarder": "HIDSI",
+      "summary": "Fellowship awarded for graduate-level research in data science."
     },
     {
-      "title": "First place",
-      "date": "2015",
-      "awarder": "University of Hawaii Micromouse Competition",
-      "summary": "My team won first place in 2015.  See my portfolio site for more details."
+      "title": "Priority Cobber Award",
+      "date": "2017-2021",
+      "awarder": "Concordia College",
+      "summary": "Merit-based academic scholarship."
+    },
+    {
+      "title": "International Student Excellence Scholarship",
+      "date": "2017-2021",
+      "awarder": "Concordia College",
+      "summary": "Scholarship recognizing academic excellence for international students."
     }
   ],
   "references": [
