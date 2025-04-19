@@ -131,6 +131,36 @@
       "summary": "Scholarship recognizing academic excellence for international students."
     }
   ],
+  "publications": [
+    {
+      "name": "A Linear Programming and Deep Reinforcement Learning Framework to Choose Dwell Positions and Dwell Time in High-Dose-Rate Prostate Brachytherapy Using Curvilinear Catheters",
+      "publisher": "ASME International Mechanical Engineering Congress and Exposition (IMECE)",
+      "releaseDate": "2024-11-17",
+      "authors": "Yang Qian, Peter Washington, Tarun K Podder, Bardia Konh",
+      "summary": "Presented at ASME IMECE 2024. Combines linear programming and deep reinforcement learning to optimize dwell positions and times in HDR prostate brachytherapy."
+    },
+    {
+      "name": "TikTokActions: A TikTok-Derived Video Dataset for Human Action Recognition",
+      "publisher": "arXiv",
+      "releaseDate": "2024-02-20",
+      "authors": "Yang Qian, Yinan Sun, Ali Kargarandehkordi, Onur Cezmi Mutlu, Saimourya Surabhi, Pingyi Chen, Zain Jabbar, Dennis Paul Wall, Peter Washington",
+      "summary": "Introduces TikTokActions, a large-scale dataset for action recognition and foundation model pretraining. arXiv:2402.08875"
+    },
+    {
+      "name": "Computer Vision Estimation of Emotion Reaction Intensity in the Wild",
+      "publisher": "arXiv",
+      "releaseDate": "2023-03-19",
+      "authors": "Yang Qian, Ali Kargarandehkordi, Onur Cezmi Mutlu, Saimourya Surabhi, Mohammadmahdi Honarmand, Dennis Paul Wall, Peter Washington",
+      "summary": "Presents models for estimating emotional reaction intensity. Developed for the ABAW ERI challenge. arXiv:2303.10741"
+    },
+    {
+      "name": "Enhancing Automatic Emotion Recognition for Clinical Applications",
+      "publisher": "University of Hawai‘i at Mānoa",
+      "releaseDate": "2023-05-31",
+      "authors": "Yang Qian",
+      "summary": "Master’s thesis on multimodal personalized facial expression recognition and emotion intensity estimation."
+    }
+  ],
   "references": [
     {
       "name": "Available upon request"
