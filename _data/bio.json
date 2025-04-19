@@ -151,14 +151,14 @@
       "publisher": "arXiv",
       "releaseDate": "2023-03-19",
       "authors": "Yang Qian, Ali Kargarandehkordi, Onur Cezmi Mutlu, Saimourya Surabhi, Mohammadmahdi Honarmand, Dennis Paul Wall, Peter Washington",
-      "summary": "Presents models for estimating emotional reaction intensity. Developed for the ABAW ERI challenge. arXiv:2303.10741"
+      "summary": "Presents deep learning models for estimating emotion reaction intensity in-the-wild settings. arXiv:2303.10741"
     },
     {
       "name": "Enhancing Automatic Emotion Recognition for Clinical Applications",
       "publisher": "University of Hawai‘i at Mānoa",
       "releaseDate": "2023-05-31",
       "authors": "Yang Qian",
-      "summary": "Master’s thesis on multimodal personalized facial expression recognition and emotion intensity estimation."
+      "summary": "Master’s thesis on personalized multimodal emotion recognition and intensity estimation using transformer architectures."
     }
   ],
   "references": [
