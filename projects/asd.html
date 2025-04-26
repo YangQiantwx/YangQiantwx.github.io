@@ -40,69 +40,71 @@
 
 <div class="container py-4">
   <h1 class="display-4">ASD Video Screening Using Foundation Models</h1>
- <p><img class="img-fluid rounded shadow my-3" src="../img/asd/asd.png" alt="ASD classification visual overview" style="max-width: 700px;" /></p>
+ <p><br /></p>
 
-<p>Autism Spectrum Disorder (ASD) affects approximately <strong>1 in 36 children</strong> in the United States, underscoring the urgent need for accessible early screening solutions. Current clinical assessments are time-intensive, requiring detailed observations and professional oversight. Existing AI models often depend on lab-collected data or intensive annotations like eye tracking or pose estimation — limiting scalability.</p>
+<p><img src="../img/asd/asd.png" alt="ASD classification visual overview" class="img-fluid rounded shadow my-3" style="max-width: 700px;" /></p>
 
-<hr />
+<h3 id="project-overview">Project Overview</h3>
 
-<h3 id="-research-overview">💡 Research Overview</h3>
-
-<p>The development of this ASD screening system began with a careful preprocessing pipeline to clean and curate a dataset of short video clips featuring children in natural environments. Unlike traditional diagnostic datasets collected in clinical settings, the raw videos in our collection came from real-world gameplay recordings where the presence of human subjects and interaction quality varied significantly. The first step involved removing non-human frames and low-quality footage using automated filters. We applied a human detection heuristic to eliminate videos without visible human presence, then used <strong>PySceneDetect</strong> to segment videos into semantically distinct scenes. This allowed us to better isolate consistent behaviors within shorter clips.</p>
-
-<p>Following automated pruning, a <strong>manual review</strong> phase was conducted. Human annotators labeled clips as “usable” or “unusable” based on whether they displayed relevant social or interactive behavior. This stage was crucial to ensure the final dataset was behaviorally informative while still retaining the natural, unstructured qualities of real-life video. The goal was not to enforce rigid annotation schemas, but to create a dataset that reflected observable behavior patterns without requiring clinical tools like gaze tracking, pose estimation, or structured questionnaires.</p>
-
-<p>Once the dataset was curated, we fed the processed clips into our training pipeline. Each clip was assigned a label based on the child’s diagnosis (ASD or NT), and grouped accordingly for <strong>gender-balanced training and testing splits</strong>. By limiting each child to a maximum of three clips, we ensured no single participant dominated the training distribution. This process made the final model more robust and generalizable — capable of identifying behavioral differences using only <strong>unstructured, short video data</strong>. Our system was trained using a vision transformer foundation model and evaluated on multiple metrics across 20 stratified Monte Carlo cross-validation splits, with consistent child-level coverage enforced across all runs.</p>
+<p>Autism Spectrum Disorder (ASD) affects approximately 1 in 36 children in the United States, underscoring the urgent need for accessible early screening solutions. Current clinical assessments are time-intensive, requiring detailed observations and professional oversight. Existing AI models often depend on lab-collected data or intensive annotations like eye tracking or pose estimation, limiting scalability.</p>
 
 <hr />
 
-<h3 id="-technical-highlights">🧪 Technical Highlights</h3>
+<h3 id="research-overview">Research Overview</h3>
+
+<p>The development of this ASD screening system began with a preprocessing pipeline to clean and curate a dataset of short video clips featuring children in natural environments. Raw videos were sourced from real-world gameplay recordings, where human presence and interaction quality varied. First, automated filters removed non-human frames and low-quality footage. A human detection heuristic eliminated videos without visible people, and PySceneDetect segmented videos into semantically distinct scenes to isolate consistent behaviors.</p>
+
+<p>A manual review phase followed: annotators labeled clips as usable or unusable based on the presence of relevant social or interactive behavior. This ensured the dataset was behaviorally informative while retaining real-life variability. Clips were then labeled by diagnosis (ASD or NT) and grouped for gender-balanced training and testing splits. Limiting each child to a maximum of three clips prevented individual dominance in the training set. The final model was trained using a Vision Transformer foundation model and evaluated across 20 stratified Monte Carlo cross-validation splits, enforcing consistent child-level coverage.</p>
+
+<hr />
+
+<h3 id="technical-highlights">Technical Highlights</h3>
 
 <ul>
-  <li>Pretraining: TikTok-like dataset of 280k+ unlabeled videos</li>
-  <li>Fine-tuning: Real-world clips labeled by child diagnosis</li>
-  <li>Model: Vision Transformer (ViT, via VideoMAEv2)</li>
-  <li>Input: Short video segments (∼10s)</li>
+  <li>Pretraining on a TikTok-like dataset of 280 k+ unlabeled videos</li>
+  <li>Fine-tuning on real-world clips labeled by diagnosis</li>
+  <li>Model: Vision Transformer (ViT via VideoMAEv2)</li>
+  <li>Input: Short video segments (~10 s)</li>
   <li>Output: Binary classification (ASD vs. NT)</li>
 </ul>
 
 <hr />
 
-<h3 id="-data-splitting-and-child-mapping">📊 Data Splitting and Child Mapping</h3>
+<h3 id="data-splitting-and-child-mapping">Data Splitting and Child Mapping</h3>
 
-<p>We implemented a custom <strong>Monte Carlo split generation</strong> pipeline with forced gender-balanced test sets per split:</p>
+<p>We implemented a custom Monte Carlo split generation pipeline with forced gender-balanced test sets:</p>
 
 <ul>
-  <li><strong>20 total splits</strong></li>
-  <li><strong>Each test set</strong> contains 2 ASD + 2 NT children (1:1 male/female ratio)</li>
-  <li><strong>Forced candidate selection</strong> used to ensure all children appear in test sets at least once</li>
-  <li><strong>Clip cap</strong>: Max 3 per child to avoid imbalance</li>
-  <li><strong>No child appears in both train/test in any split</strong></li>
+  <li>20 total splits</li>
+  <li>Each test set contains 2 ASD + 2 NT children (1:1 male/female ratio)</li>
+  <li>Forced candidate selection ensures all children appear in test sets at least once</li>
+  <li>Clip cap: max 3 per child to avoid imbalance</li>
+  <li>No child appears in both train and test in any split</li>
 </ul>
 
 <hr />
 
-<h3 id="-evaluation">📈 Evaluation</h3>
+<h3 id="evaluation">Evaluation</h3>
 
-<p>Each model was evaluated using:</p>
+<p>Models were evaluated using:</p>
 
 <ul>
   <li>Clip-level and child-level accuracy</li>
-  <li>Macro / weighted F1 scores</li>
+  <li>Macro and weighted F1 scores</li>
   <li>Confusion matrices</li>
-  <li>Test set consistency via <strong>Jaccard similarity</strong> matrix across splits</li>
+  <li>Jaccard similarity matrix for test-set overlap across splits</li>
 </ul>
 
 <hr />
 
-<h3 id="-results-summary">✅ Results Summary</h3>
+<h3 id="results-summary">Results Summary</h3>
 
 <ul>
-  <li>Achieved &gt;90% accuracy in some runs using only 10s clips from unconstrained videos</li>
-  <li>Overlap analysis using the Jaccard similarity (computed from unique child sets in test CSVs) confirmed test set diversity and split independence</li>
+  <li>Achieved over 90% accuracy in some runs using only 10 seconds clips</li>
+  <li>Overlap analysis confirmed test-set diversity and split independence</li>
 </ul>
 
-<p>🎯 <strong>All Splits Summary:</strong></p>
+<p><strong>All Splits Summary:</strong></p>
 <ul>
   <li>Mean Clip Accuracy: 0.702</li>
   <li>Mean F1 Macro: 0.691</li>
@@ -112,13 +114,14 @@
 
 <hr />
 
-<h3 id="-alignment-with-phd-goals">🧭 Alignment with PhD Goals</h3>
+<h3 id="alignment-with-phd-goals">Alignment with PhD Goals</h3>
 
-<p>This project directly reflects my research focus:</p>
+<p>This project reflects my research focus on:</p>
+
 <ul>
-  <li>Applying <strong>foundation models</strong> to behavioral diagnostics</li>
-  <li>Building <strong>scalable, annotation-free</strong> video-based health AI</li>
-  <li>Designing <strong>data pipelines</strong> that prioritize fairness, coverage, and reproducibility</li>
+  <li>Applying foundation models to behavioral diagnostics</li>
+  <li>Building scalable, annotation-free video-based health AI</li>
+  <li>Designing data pipelines that prioritize fairness, coverage, and reproducibility</li>
 </ul>
 
 </div>
