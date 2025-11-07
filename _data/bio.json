@@ -131,36 +131,36 @@
       "summary": "Scholarship recognizing academic excellence for international students."
     }
   ],
-  "publications": [
+"publications": [
+    {
+      "name": "Hashtag2Action: Data Engineering and Self-Supervised Pre-Training for Action Recognition in Short-Form Videos",
+      "publisher": "Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops",
+      "releaseDate": "2025-01-01",
+      "authors": "Y. Qian, A. Kargarandehkordi, Y. Sun, P. Azizian, O. C. Mutlu, S. Surabhi, Z. Jabbar, D. Wall, P. Washington, and H. Chen",
+      "summary": "Presented at the First Workshop on Short-Form Video Understanding (SVU 2025), held in conjunction with ICCV 2025, Honolulu, Hawai‘i, USA."
+    },
     {
       "name": "A Linear Programming and Deep Reinforcement Learning Framework to Choose Dwell Positions and Dwell Time in High-Dose-Rate Prostate Brachytherapy Using Curvilinear Catheters",
       "publisher": "ASME International Mechanical Engineering Congress and Exposition (IMECE)",
       "releaseDate": "2024-11-17",
-      "authors": "Yang Qian, Peter Washington, Tarun K Podder, Bardia Konh",
+      "authors": "Y. Qian, P. Washington, T. K. Podder, and B. Konh",
       "summary": "Presented at ASME IMECE 2024. Combines linear programming and deep reinforcement learning to optimize dwell positions and times in HDR prostate brachytherapy."
-    },
-    {
-      "name": "TikTokActions: A TikTok-Derived Video Dataset for Human Action Recognition",
-      "publisher": "arXiv",
-      "releaseDate": "2024-02-20",
-      "authors": "Yang Qian, Yinan Sun, Ali Kargarandehkordi, Onur Cezmi Mutlu, Saimourya Surabhi, Pingyi Chen, Zain Jabbar, Dennis Paul Wall, Peter Washington",
-      "summary": "Introduces TikTokActions, a large-scale dataset for action recognition and foundation model pretraining. arXiv:2402.08875"
     },
     {
       "name": "Computer Vision Estimation of Emotion Reaction Intensity in the Wild",
       "publisher": "arXiv",
       "releaseDate": "2023-03-19",
-      "authors": "Yang Qian, Ali Kargarandehkordi, Onur Cezmi Mutlu, Saimourya Surabhi, Mohammadmahdi Honarmand, Dennis Paul Wall, Peter Washington",
+      "authors": "Y. Qian, A. Kargarandehkordi, O. C. Mutlu, S. Surabhi, M. Honarmand, D. P. Wall, and P. Washington",
       "summary": "Presents deep learning models for estimating emotion reaction intensity in-the-wild settings. arXiv:2303.10741"
     },
     {
       "name": "Enhancing Automatic Emotion Recognition for Clinical Applications",
       "publisher": "University of Hawai‘i at Mānoa",
       "releaseDate": "2023-05-31",
-      "authors": "Yang Qian",
+      "authors": "Y. Qian",
       "summary": "Master’s thesis on personalized multimodal emotion recognition and intensity estimation using transformer architectures."
     }
-  ],
+],
   "references": [
     {
       "name": "Available upon request"
