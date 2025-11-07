@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" content="Advancing Human Action Recognition with Foundation Models Trained on Unlabeled Public Videos | Yang Qian | Professional Portfolio">
+    <meta name="title" content="Hashtag2Action: Data Engineering and Self-Supervised Pre-Training for Action Recognition in Short-Form Videos | Yang Qian | Professional Portfolio">
     <meta name="description" content="">
     <meta name="image" content="https://github.com/YangQiantwx.png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Yang Qian | Professional Portfolio">
     <meta property="og:url" content="https://YangQiantwx.github.io/essays/foundation-models-action-recognition.html">
-    <meta property="og:title" content="Advancing Human Action Recognition with Foundation Models Trained on Unlabeled Public Videos | Yang Qian | Professional Portfolio">
+    <meta property="og:title" content="Hashtag2Action: Data Engineering and Self-Supervised Pre-Training for Action Recognition in Short-Form Videos | Yang Qian | Professional Portfolio">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://github.com/YangQiantwx.png">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -22,7 +22,7 @@
     </script>
     
 
-    <title>Advancing Human Action Recognition with Foundation Models Trained on Unlabeled Public Videos | Yang Qian | Professional Portfolio</title>
+    <title>Hashtag2Action: Data Engineering and Self-Supervised Pre-Training for Action Recognition in Short-Form Videos | Yang Qian | Professional Portfolio</title>
   </head>
   <body>
   <header class="navbar navbar-expand navbar-light bg-light bg-gradient border-bottom">
@@ -39,8 +39,8 @@
 </header>
 
 <div class="container py-4">
-  <h1 class="display-4">Advancing Human Action Recognition with Foundation Models Trained on Unlabeled Public Videos</h1>
-  <span class="date">19 Feb 2024</span>
+  <h1 class="display-4">Hashtag2Action: Data Engineering and Self-Supervised Pre-Training for Action Recognition in Short-Form Videos</h1>
+  <span class="date">19 Oct 2025</span>
   <hr>
   <p><img src="/img/foundation-models/clipsamples.jpeg" alt="Example TikTok video clips used for pretraining" class="img-fluid rounded shadow my-3" style="max-width: 700px;" /></p>
 
@@ -48,9 +48,10 @@
 
 <p>Developing video action recognition models that capture real-world human behavior while addressing social and ethical considerations is crucial for advancing AI. We present a comprehensive data-engineering pipeline that leverages weakly labeled, culturally diverse short videos from social media (e.g., TikTok) to curate a dataset of 283,582 clips spanning 386 action groups with minimal human intervention. Our pipeline employs adaptive hashtag selection, metadata filtering, and vision-based frame selection to ensure high-quality data. Building on this curated dataset, we introduce a self-supervised pre-training framework using the VideoMAE V2 [Wang et al., 2023] backbone. Fine-tuning on UCF101 [Soomro et al., 2012], HMDB51 [Kuehne et al., 2011], Kinetics-400 [Kay et al., 2017], and Something-Something V2 [Goyal et al., 2017] yields competitive results—99.05%, 86.08%, 85.51%, and 74.27% accuracy, respectively—using only 20% of the original pre-training data. Our findings illustrate that self-supervised learning on carefully curated weakly labeled data can achieve robust downstream performance without human annotation, enabling the use of rich social media data in a privacy-conscious manner. We open-source our data engine and fine-tuning framework to streamline data curation on short-video platforms and accelerate future research in human-centric video recognition.</p>
 
-<h3 id="preprint-access">Preprint Access</h3>
+<h3 id="publication">Publication</h3>
 
-<p><a href="https://arxiv.org/abs/2402.08875" target="_blank">arXiv:2402.08875</a></p>
+<p><strong>Accepted at</strong>: <em>Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops — The First Workshop on Short-Form Video Understanding (SVU 2025), Honolulu, Hawai‘i, USA.</em><br />
+<strong>PDF (Open Access)</strong>: <a href="https://openaccess.thecvf.com/content/ICCV2025W/SVU/papers/Qian_Hashtag2Action_Data_Engineering_and_Self-Supervised_Pre-Training_for_Action_Recognition_in_ICCVW_2025_paper.pdf" target="_blank">View on CVF</a></p>
 
 <h3 id="comments">Comments</h3>
 
@@ -60,8 +61,6 @@
   <li><strong>SSL impact</strong>: Demonstrates that modern self-supervised objectives can match or exceed supervised baselines with far less annotated data.</li>
   <li><strong>Open science</strong>: Engine and framework released open-source to lower barriers for future video-based foundation model research.</li>
 </ul>
-
-<!-- Submitted to IJCAI 2025 (under review) -->
 
 </div>
 
